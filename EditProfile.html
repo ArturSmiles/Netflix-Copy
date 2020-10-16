@@ -15,14 +15,14 @@
             background-color: #141414;
         }
 
-        h1,
         h2,
-        h3 {
-            color: white
+        h3,
+        h4 {
+            color: #bfb8a9
         }
 
         p {
-            color: white
+            color: #bfb8a9
         }
 
         hr {
@@ -31,6 +31,7 @@
 
         h1 {
             font-size: 4rem;
+            color: white;
         }
 
         input[type=checkbox] {
@@ -56,10 +57,14 @@
             opacity: 1;
             /* Firefox */
         }
-        #PicSelect{
+
+        #PicSelect {
             max-width: 150px;
         }
 
+        button[type=button] {
+            background-color: transparent;
+        }
     </style>
     <title>Edit Profile</title>
 </head>
@@ -73,95 +78,108 @@
     </nav>
     <div class="container justify-content-center" style="max-width: max-content;">
         <form id="Page">
-        <h1>Edit Profile</h1>
-        <hr>
-        <div class="row justify-content-center">
-            <div class="col pr-4" style="max-width: max-content;">
-                <a href="https://placeholder.com"><img src="https://via.placeholder.com/150" id="Pic" style="width: 150px; height: 150px;"></a>
-                <div><input type="file" class="filestyle" accept="image/*" id="PicSelect" onchange="changePic()"></div>
-            </div>
-            <div class="col">
-                <input class="form-control" type="text" placeholder="UserName" disabled id="UserName" style="background-color: #666666;">
-                <p class="mb-0" style="margin-top: 3rem; font-size: 20px;">Language:</p>
-                <select class="custom-select bg-dark text-white" style="width: 7rem; font-weight: bolder;" id="LButton" disabled>
-                    <option selected>English</option>
-                    <option value="1">French</option>
-                    <option value="2">Italian</option>
-                    <option value="3">Russian</option>
-                </select>
-                <hr>
-                <h3>Maturity Settings:</h3>
-                <select class="custom-select bg-dark text-white" id="MSettings" onchange="mSToggle()" disabled>
-                    <option selected value="1">All Maturity Ratings</option>
-                    <option value="2">For Little Kids only</option>
-                    <option value="3">For Older Kids and below</option>
-                    <option value="4">For Teens and below</option>
-                </select>
-                <p id="Mature">Watch all TV shows and movies, including mature content</p>
-                <p id="LKids" style="display: none;">Watch TV shows and movies suitable for all ages</p>
-                <p id="OKids" style="display: none;">Watch TV shows and movies suitable for older kids.</p>
-                <p id="Teens" style="display: none;">Watch TV shows and movies suitable for teens.</p>
-                <button type="button" class="btn btn-dark" id="Edit" onclick="mEdit()" disabled>Edit</button>
-                <button type="button" class="btn btn-dark" style="display: none;" id="SaveM" onclick="mSave()">Save</button>
-                <hr>
-                <h3>Autoplay Controls</h3>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <input type="checkbox" aria-label="Checkbox for following text input" id="Checkbox1" disabled>
-                        <p id="AutoplayOption">Autoplay next episode in a series on all Devices</p>
+            <h1 style="margin-bottom: 0;">Edit Profile</h1>
+            <hr style="margin-top: 0;">
+            <div class="row justify-content-center">
+                <div class="col pr-4" style="max-width: max-content;">
+                    <img src="https://via.placeholder.com/150" id="Pic" style="width: 150px; height: 150px;">
+                    <div><input type="file" class="filestyle" accept="image/*" id="PicSelect" onchange="changePic()">
                     </div>
                 </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <input class="bg-dark" type="checkbox" aria-label="Checkbox for following text input" id="Checkbox2" disabled>
-                        <p id="AutoplayOption">Autoplay previews while browsing on all Devices.</p>
+                <div class="col">
+                    <input class="form-control" type="text" placeholder="UserName" disabled id="UserName"
+                        style="background-color: #666666;">
+                    <p class="mb-0" style="margin-top: 3rem; font-size: 20px;">Language:</p>
+                    <select class="custom-select bg-dark text-white" style="width: 7rem; font-weight: bolder;"
+                        id="LButton" disabled>
+                        <option selected>English</option>
+                        <option value="1">French</option>
+                        <option value="2">Italian</option>
+                        <option value="3">Russian</option>
+                    </select>
+                    <hr>
+                    <h4>Maturity Settings:</h4>
+                    <select class="custom-select bg-dark text-white" id="MSettings" onchange="mSToggle()"
+                        style="max-width: max-content;" disabled>
+                        <option selected value="1">All Maturity Ratings</option>
+                        <option value="2">For Little Kids only</option>
+                        <option value="3">For Older Kids and below</option>
+                        <option value="4">For Teens and below</option>
+                    </select>
+                    <p id="Mature">Watch all TV shows and movies, including mature content</p>
+                    <p id="LKids" style="display: none;">Watch TV shows and movies suitable for all ages</p>
+                    <p id="OKids" style="display: none;">Watch TV shows and movies suitable for older kids.</p>
+                    <p id="Teens" style="display: none;">Watch TV shows and movies suitable for teens.</p>
+                    <button type="button" class="btn btn-dark" id="Edit" onclick="mEdit()" disabled>Edit</button>
+                    <button type="button" class="btn btn-dark" style="display: none;" id="SaveM"
+                        onclick="mSave()">Save</button>
+                    <hr>
+                    <h4>Autoplay Controls</h4>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <input type="checkbox" aria-label="Checkbox for following text input" id="Checkbox1"
+                                disabled>
+                            <p id="AutoplayOption">Autoplay next episode in a series on all Devices</p>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <input class="bg-dark" type="checkbox" aria-label="Checkbox for following text input"
+                                id="Checkbox2" disabled>
+                            <p id="AutoplayOption">Autoplay previews while browsing on all Devices.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <hr>
-        <div class="row">
-        <button type="button" id="FullEdit" class="btn btn-dark mx-1" onclick="editFull()">Edit</button>
-        <button type="button" id="Save" class="btn btn-dark mx-1"  onclick= "save()" style="display: none;">Save</button>
-        <button type="button" id="Cancel" class="btn btn-dark mx-1" style="display: none;">Cancel</button>
-        <button type="button" id="Delete" class="btn btn-dark mx-1" style="display: none;" data-toggle="modal" data-target="#staticBackdrop">Delete Profile</button>
-    </div>
-        <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-          <a href="#"><button type="button" class="btn btn-primary" onclick= "dPage()" >Yes</button></a>
-        </div>
-      </div>
-    </div>
-  </div>
-    </form>
+            <hr>
+            <div class="row ml-1">
+                <button type="button" id="FullEdit" class="btn btn-dark mx-1" onclick="editFull()">Edit</button>
+                <button type="button" id="Save" class="btn btn-dark mx-1" onclick="save()"
+                    style="display: none;">Save</button>
+                <button type="button" id="Cancel" class="btn btn-dark mx-1" onclick="cancel()"
+                    style="display: none;">Cancel</button>
+                <button type="button" id="Delete" class="btn btn-dark mx-1" style="display: none;" data-toggle="modal"
+                    data-target="#staticBackdrop">Delete Profile</button>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Are you Sure you want to Delete the Profile ?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn" data-dismiss="modal"
+                                style="background-color: #155724; color: white;">No</button>
+                            <a href="EditProfile.html"><button type="button" class="btn" onclick="dPage()"
+                                    style="background-color: #721c24; color: white;">Yes</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
     <script>
         //Variables
         let eFullButton = document.getElementById("FullEdit")
-            let sButton = document.getElementById("Save")
-            let cButton = document.getElementById("Cancel")
-            let dButton = document.getElementById("Delete")
-            let cBox1 = document.getElementById("Checkbox1")
-            let cBox2 = document.getElementById("Checkbox2")
-            let eButton = document.getElementById("Edit")
-            let lButton = document.getElementById("LButton")
-            let userField = document.getElementById("UserName")
-            let mSettings = document.getElementById("MSettings")
-            let sMButton = document.getElementById("SaveM")
+        let sButton = document.getElementById("Save")
+        let cButton = document.getElementById("Cancel")
+        let dButton = document.getElementById("Delete")
+        let cBox1 = document.getElementById("Checkbox1")
+        let cBox2 = document.getElementById("Checkbox2")
+        let eButton = document.getElementById("Edit")
+        let lButton = document.getElementById("LButton")
+        let userField = document.getElementById("UserName")
+        let mSettings = document.getElementById("MSettings")
+        let sMButton = document.getElementById("SaveM")
 
         //Functions
 
@@ -190,7 +208,7 @@
             userField.disabled = true
             mSettings.disabled = true
         }
-        function cancel(){
+        function cancel() {
             sButton.style.display = "none";
             cButton.style.display = "none";
             dButton.style.display = "none";
@@ -205,12 +223,12 @@
             mSettings.disabled = true
         }
 
-        function mEdit(){
+        function mEdit() {
             mSettings.disabled = false
             eButton.style.display = "none"
             sMButton.style.display = "block"
         }
-        function mSToggle(){
+        function mSToggle() {
             let mValue = mSettings.value
             console.log(mValue)
             switch (mValue) {
@@ -244,30 +262,30 @@
             }
         }
 
-        function mSave(){
+        function mSave() {
             mSettings.disabled = true
             eButton.style.display = "block"
             sMButton.style.display = "none"
         }
 
-        function dPage(){
+        function dPage() {
             document.getElementById("Page").reset()
         }
-        function changePic(){
+        function changePic() {
             let selectPic = document.getElementById("PicSelect").files[0].name
             let pic = document.getElementById("Pic")
-            pic.src = selectPic
+            pic.src = "/Icons/" + selectPic
             console.log(pic.src)
         }
 
     </script>
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-    crossorigin="anonymous"></script>
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
